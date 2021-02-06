@@ -3,7 +3,7 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div className="mainBanner">
+    <div id="mainBanner">
       <div>This is the banner.</div>
     </div>
   );
