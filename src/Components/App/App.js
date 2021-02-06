@@ -1,27 +1,15 @@
-import logo from "../../logo.svg";
+import Banner from "../Banner/Banner.js";
+import Footer from "../Footer/Footer.js";
 import { Button } from "@material-ui/core";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React sadfsdaf fasdfff
-        </a>
-        <Button variant="contained" color="primary">
-          Primary Button
-        </Button>
-      </header>
+      <Banner />
+      {/* Make react router switch here. */}
+      Test
+      <Footer />
     </div>
   );
 }
