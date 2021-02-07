@@ -18,8 +18,9 @@ const TextFieldStyled = (props) => {
   };
 
   return (
-    <>
-      <Grid item xs={2}>
+    <Grid container spacing={2}>
+      <Grid item xs={2} />
+      <Grid item xs={4}>
         <div className="labelFormatting">{info}</div>
       </Grid>
       <Grid item xs={4}>
@@ -36,8 +37,9 @@ const TextFieldStyled = (props) => {
           }}
         />
       </Grid>
-      <Grid item xs={6} />
-    </>
+      <Grid item xs={4} />
+      <Grid item xs={2} />
+    </Grid>
   );
 };
 
