@@ -14,6 +14,10 @@ const NewAccount = () => {
     changeUserPasswordConfirm,
   } = actionTypes;
 
+  const { userEmail, userPassword, userPasswordConfirm } = useSelector(
+    (state) => state
+  );
+
   const [allErrors, setAllErrors] = useState({
     userEmailError: false,
     userPasswordError: false,
@@ -60,12 +64,16 @@ const NewAccount = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted new account");
+    if (userPassword !== userPasswordConfirm) {
+      setAllErrors({
+        ...allErrors,
+        userPasswordConfirmError: true,
+      });
+      return;
+    } else {
+      // Handle submission of user and password here
+    }
   };
-
-  const { userEmail, userPassword, userPasswordConfirm } = useSelector(
-    (state) => state
-  );
 
   return (
     <div id="newAccount">
