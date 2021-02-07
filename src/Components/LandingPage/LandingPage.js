@@ -36,7 +36,7 @@ const LandingPage = () => {
         <Grid item xs={2} />
         <Grid item xs={8}>
           <form onSubmit={handleSubmit}>
-            <Grid container id="internalForm" spacing={4}>
+            <Grid container id="internalLandingPageForm" spacing={4}>
               {/* Text Fields */}
               <TextFieldStyled
                 info={"Enter Car Price ($):"}

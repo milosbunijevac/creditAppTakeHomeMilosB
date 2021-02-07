@@ -3,6 +3,9 @@ export const changeCarMake = "CHANGE_CAR_MAKE";
 export const changeCarModel = "CHANGE_CAR_MODEL";
 export const changeUserIncome = "CHANGE_USER_INCOME";
 export const changeUserScore = "CHANGE_USER_SCORE";
+export const changeUserEmail = "CHANGE_USER_EMAIL";
+export const changeUserPassword = "CHANGE_USER_PASSWORD";
+export const changeUserPasswordConfirm = "CHANGE_USER_PASSWORD_CONFIRM";
 
 export const changeCarPriceAction = (carPrice) => ({
   type: changeCarPrice,
@@ -27,4 +30,19 @@ export const changeUserIncomeAction = (userIncome) => ({
 export const changeCreditScoreAction = (userScore) => ({
   type: changeUserScore,
   payload: userScore,
+});
+
+export const changeUserEmailAction = (userEmail) => ({
+  type: changeUserEmail,
+  payload: userEmail,
+});
+
+export const changeUserPasswordAction = (userPassword) => ({
+  type: changeUserPassword,
+  payload: userPassword,
+});
+
+export const changeUserPasswordConfirmAction = (userPasswordConfirm) => ({
+  type: changeUserPasswordConfirm,
+  payload: userPasswordConfirm,
 });

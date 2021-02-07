@@ -6,6 +6,9 @@ const initialState = {
   carModel: "",
   userIncome: 0,
   userScore: 0,
+  userEmail: "",
+  userPassword: "",
+  userPasswordConfirm: "",
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -34,6 +37,21 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         userScore: action.payload,
+      };
+    case actions.changeUserEmail:
+      return {
+        ...state,
+        userEmail: action.payload,
+      };
+    case actions.changeUserPassword:
+      return {
+        ...state,
+        userPassword: action.payload,
+      };
+    case actions.changeUserPasswordConfirm:
+      return {
+        ...state,
+        userPasswordConfirm: action.payload,
       };
     default:
       return state;
