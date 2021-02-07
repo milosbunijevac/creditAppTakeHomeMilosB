@@ -8,6 +8,7 @@ import {
   checkEmptyField,
   checkCreditScore,
   checkMinIncome,
+  checkAllErrors,
 } from "../../validators/validators.js";
 import "./LandingPage.css";
 
@@ -23,6 +24,10 @@ const LandingPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!checkAllErrors(allErrors)) {
+      // Call the API
+      console.log("no errors");
+    }
   };
 
   const [allErrors, setAllErrors] = useState({
@@ -108,11 +113,7 @@ const LandingPage = () => {
                   label="required"
                   required
                   error={allErrors.carValueError}
-                  helperText={
-                    allErrors.carValueError
-                      ? "Please enter a value below 1,000,000 dollars"
-                      : ""
-                  }
+                  helperText={"Please enter a value below 1,000,000 dollars"}
                   passbackFunction={(e) => handleChange(e, changeCarPrice)}
                 />
                 <TextFieldStyled
@@ -122,9 +123,7 @@ const LandingPage = () => {
                   label="required"
                   required
                   error={allErrors.carMakeError}
-                  helperText={
-                    allErrors.carMakeError ? "Please enter a car make" : ""
-                  }
+                  helperText={"Please enter a car make"}
                   passbackFunction={(e) => handleChange(e, changeCarMake)}
                 />
                 <TextFieldStyled
@@ -134,9 +133,7 @@ const LandingPage = () => {
                   label="required"
                   required
                   error={allErrors.carModelError}
-                  helperText={
-                    allErrors.carModelError ? "Please enter a car model" : ""
-                  }
+                  helperText={"Please enter a car model"}
                   passbackFunction={(e) => handleChange(e, changeCarModel)}
                 />
                 <TextFieldStyled
@@ -147,11 +144,7 @@ const LandingPage = () => {
                   label="required"
                   required
                   error={allErrors.userIncomeError}
-                  helperText={
-                    allErrors.userIncomeError
-                      ? "Please enter a value above 0"
-                      : ""
-                  }
+                  helperText={"Please enter a value above 0"}
                   passbackFunction={(e) => handleChange(e, changeUserIncome)}
                 />
                 <TextFieldStyled
@@ -161,11 +154,7 @@ const LandingPage = () => {
                   label="required"
                   required
                   error={allErrors.userCreditScoreError}
-                  helperText={
-                    allErrors.userCreditScoreError
-                      ? "Please enter a score between 300-850"
-                      : ""
-                  }
+                  helperText={"Please enter a score between 300-850"}
                   passbackFunction={(e) => handleChange(e, changeUserScore)}
                 />
 

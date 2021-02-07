@@ -22,3 +22,15 @@ export const checkMinIncome = (value) => {
     return false;
   }
 };
+
+export const checkAllErrors = (object) => {
+  let result = false;
+  console.log("object: ", object);
+  for (let key in object) {
+    if (object[key] === true) {
+      result = true;
+      break;
+    }
+  }
+  return result;
+};

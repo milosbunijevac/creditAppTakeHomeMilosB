@@ -1,11 +1,11 @@
 import * as actions from "../actions/rootActions.js";
 
 const initialState = {
-  carPrice: 0,
+  carPrice: "",
   carMake: "",
   carModel: "",
-  userIncome: 0,
-  userScore: 0,
+  userIncome: "",
+  userScore: "",
   userEmail: "",
   userPassword: "",
   userPasswordConfirm: "",
