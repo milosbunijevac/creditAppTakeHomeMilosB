@@ -31,7 +31,7 @@ describe("Validation tests", () => {
     });
 
     it("should return true for checkMinIncome is above 0", () => {
-      expect(checkMinIncome(goodCreditScore)).toBe(true);
+      expect(checkMinIncome(goodIncome)).toBe(true);
     });
 
     it("should return true for checkAllErrors if object contains a true value", () => {
