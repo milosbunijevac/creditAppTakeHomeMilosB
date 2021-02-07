@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import TextFieldStyled from "../TextFieldStyled/TextFieldStyled.js";
@@ -15,6 +16,7 @@ import "./LandingPage.css";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { carPrice, carMake, carModel, userIncome, userScore } = useSelector(
     (state) => state
@@ -26,6 +28,7 @@ const LandingPage = () => {
     changeCarModel,
     changeUserIncome,
     changeUserScore,
+    changeErrorMessage,
   } = actionTypes;
 
   const handleSubmit = (e) => {
@@ -34,10 +37,11 @@ const LandingPage = () => {
       // Call the API
       mockFetch(carPrice, userIncome, userScore)
         .then((response) => {
-          console.log("this is successful response: ", response);
+          history.push("/newaccount");
         })
         .catch((error) => {
-          console.log("This is the error: ", error);
+          dispatch({ type: changeErrorMessage, payload: error });
+          history.push("/disqualify");
         });
       console.log("no errors");
     }
