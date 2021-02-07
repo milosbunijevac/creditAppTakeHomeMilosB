@@ -41,26 +41,33 @@ const LandingPage = () => {
               <TextFieldStyled
                 info={"Enter Car Price ($):"}
                 value={carPrice}
+                adornment={"$"}
+                type="number"
                 passbackFunction={(e) => handleChange(e, changeCarPrice)}
               />
               <TextFieldStyled
                 info={"Enter Car Make:"}
                 value={carMake}
+                type="string"
                 passbackFunction={(e) => handleChange(e, changeCarMake)}
               />
               <TextFieldStyled
                 info={"Enter Car Model:"}
                 value={carModel}
+                type="string"
                 passbackFunction={(e) => handleChange(e, changeCarModel)}
               />
               <TextFieldStyled
                 info={"User Income ($):"}
                 value={userIncome}
+                adornment={"$"}
+                type="number"
                 passbackFunction={(e) => handleChange(e, changeUserIncome)}
               />
               <TextFieldStyled
                 info={"Enter your credit score:"}
                 value={userScore}
+                type="number"
                 passbackFunction={(e) => handleChange(e, changeUserScore)}
               />
 
