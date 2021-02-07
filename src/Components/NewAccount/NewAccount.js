@@ -76,12 +76,12 @@ const NewAccount = () => {
   };
 
   return (
-    <div id="newAccount">
+    <div data-testid="newAccount">
       <Grid container>
         <Grid item xs={2} />
         <Grid item xs={8}>
           <form onSubmit={handleSubmit}>
-            <Grid container id="internalNewAccountForm" spacing={4}>
+            <Grid container data-testid="internalNewAccountForm" spacing={4}>
               {/* Text Fields */}
               <Grid item xs={12}>
                 <TextFieldStyled
@@ -89,7 +89,7 @@ const NewAccount = () => {
                   value={userEmail}
                   type="email"
                   required
-                  id="newAccountEmailAddress"
+                  data-testid="newAccountEmailAddress"
                   error={allErrors.userEmailError}
                   label="Email address"
                   helperText={
@@ -103,7 +103,7 @@ const NewAccount = () => {
                   type="password"
                   required
                   label="Password"
-                  id="newAccountPassword"
+                  data-testid="newAccountPassword"
                   error={allErrors.userPasswordError}
                   helperText={
                     allErrors.userPasswordError && "Passwords must match"
@@ -117,7 +117,7 @@ const NewAccount = () => {
                   required
                   error={allErrors.userPasswordConfirmError}
                   label="Confirm Password"
-                  id="newAccountPasswordConfirm"
+                  data-testid="newAccountPasswordConfirm"
                   helperText={
                     allErrors.userPasswordConfirmError && "Passwords must match"
                   }
@@ -134,7 +134,7 @@ const NewAccount = () => {
                   color="primary"
                   type="submit"
                   fullWidth
-                  id="createNewAccountButton"
+                  data-testid="createNewAccountButton"
                   onSubmit={handleSubmit}
                 >
                   Create New Account

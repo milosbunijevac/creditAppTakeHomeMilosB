@@ -61,7 +61,7 @@ const TextFieldStyled = (props) => {
 
 TextFieldStyled.propTypes = {
   info: propTypes.string.isRequired,
-  value: propTypes.oneOf([String, Number]).isRequired,
+  value: propTypes.oneOfType([propTypes.string, propTypes.number]).isRequired,
   passbackFunction: propTypes.func.isRequired,
   type: propTypes.string.isRequired,
   id: propTypes.string.isRequired,
@@ -69,7 +69,7 @@ TextFieldStyled.propTypes = {
   fullWidth: propTypes.bool,
   adornment: propTypes.string,
   label: propTypes.string,
-  helperText: propTypes.string,
+  helperText: propTypes.oneOfType([propTypes.string, propTypes.bool]),
   required: propTypes.bool,
 };
 

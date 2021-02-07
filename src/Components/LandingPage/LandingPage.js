@@ -30,7 +30,6 @@ const LandingPage = () => {
 
   useEffect(() => {
     return () => {
-      console.log("unmounting");
       dispatch({ type: resetState });
     };
   }, [dispatch, resetState]);
@@ -51,7 +50,6 @@ const LandingPage = () => {
           dispatch({ type: changeErrorMessage, payload: error });
           history.push("/disqualify");
         });
-      console.log("no errors");
     }
   };
 

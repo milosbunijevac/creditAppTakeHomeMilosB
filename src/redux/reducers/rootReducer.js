@@ -1,6 +1,6 @@
 import * as actions from "../actions/rootActions.js";
 
-const initialState = {
+export const initialState = {
   carPrice: "",
   carMake: "",
   carModel: "",
