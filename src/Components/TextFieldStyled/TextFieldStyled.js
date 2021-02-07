@@ -6,13 +6,14 @@ import propTypes from "prop-types";
 import "./TextFieldStyled.css";
 
 const TextFieldStyled = (props) => {
+  const { passbackFunction, value, info } = props;
   return (
     <>
       <Grid item xs={2}>
-        <div className="labelFormatting">{props.info}</div>
+        <div className="labelFormatting">{info}</div>
       </Grid>
       <Grid item xs={4}>
-        <TextField />
+        <TextField onChange={passbackFunction} />
       </Grid>
       <Grid item xs={6} />
     </>
@@ -21,6 +22,7 @@ const TextFieldStyled = (props) => {
 
 TextFieldStyled.propTypes = {
   info: propTypes.string.isRequired,
+  value: propTypes.oneOf([String, Number]).isRequired,
   passbackFunction: propTypes.func.isRequired,
 };
 
