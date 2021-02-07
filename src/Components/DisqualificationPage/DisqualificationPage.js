@@ -7,7 +7,7 @@ const DisqualificationPage = () => {
   return (
     <div id="disqualificationPage">
       <div id="shownErrorMessage">{errorMessage}</div>
-      <div>
+      <div id="showCustomerSupportMessage">
         Please contact customer support at (999)-123-4567 for more information
         on this issue.
       </div>

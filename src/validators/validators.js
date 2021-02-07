@@ -25,7 +25,6 @@ export const checkMinIncome = (value) => {
 
 export const checkAllErrors = (object) => {
   let result = false;
-  console.log("object: ", object);
   for (let key in object) {
     if (object[key] === true) {
       result = true;

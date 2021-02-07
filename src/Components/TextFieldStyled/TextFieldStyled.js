@@ -18,6 +18,7 @@ const TextFieldStyled = (props) => {
     helperText,
     required,
     fullWidth,
+    id,
   } = props;
 
   const adornmentCheck = () => {
@@ -39,6 +40,7 @@ const TextFieldStyled = (props) => {
           onChange={passbackFunction}
           value={value}
           type={type}
+          id={id}
           fullWidth={fullWidth}
           required={required}
           label={label}
@@ -62,6 +64,7 @@ TextFieldStyled.propTypes = {
   value: propTypes.oneOf([String, Number]).isRequired,
   passbackFunction: propTypes.func.isRequired,
   type: propTypes.string.isRequired,
+  id: propTypes.string.isRequired,
   error: propTypes.bool,
   fullWidth: propTypes.bool,
   adornment: propTypes.string,

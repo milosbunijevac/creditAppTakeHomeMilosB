@@ -134,6 +134,7 @@ const LandingPage = () => {
                   label="required"
                   required
                   error={allErrors.carValueError}
+                  id="carPriceField"
                   helperText={
                     allErrors.carValueError &&
                     "Please enter a value below 1,000,000 dollars"
@@ -146,6 +147,7 @@ const LandingPage = () => {
                   type="string"
                   label="required"
                   required
+                  id="carMakeField"
                   error={allErrors.carMakeError}
                   helperText={
                     allErrors.carMakeError && "Please enter a car make"
@@ -158,6 +160,7 @@ const LandingPage = () => {
                   type="string"
                   label="required"
                   required
+                  id="carModelField"
                   error={allErrors.carModelError}
                   helperText={
                     allErrors.carModelError && "Please enter a car model"
@@ -171,6 +174,7 @@ const LandingPage = () => {
                   type="number"
                   label="required"
                   required
+                  id="userIncomeField"
                   error={allErrors.userIncomeError}
                   helperText={
                     allErrors.userIncomeError && "Please enter a value above 0"
@@ -183,6 +187,7 @@ const LandingPage = () => {
                   type="number"
                   label="required"
                   required
+                  id="creditScoreField"
                   error={allErrors.userCreditScoreError}
                   helperText={
                     allErrors.userCreditScoreError &&
@@ -211,6 +216,7 @@ const LandingPage = () => {
                   variant="contained"
                   color="primary"
                   type="submit"
+                  id="applyNowButton"
                   onSubmit={handleSubmit}
                 >
                   Apply Now
