@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Banner from "../Banner/Banner.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import NewAccountPage from "../NewAccount/NewAccount.js";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary.js";
 import DisqualificationPage from "../DisqualificationPage/DisqualificationPage.js";
 import "./App.css";
 
@@ -27,21 +28,23 @@ function App() {
     <div className="App">
       <Banner />
       <div id="mainSection" className={classes.root}>
-        <Paper>
-          <Router>
-            <Switch>
-              <Route path="/newaccount">
-                <NewAccountPage />
-              </Route>
-              <Route path="/disqualify">
-                <DisqualificationPage />
-              </Route>
-              <Route path="/">
-                <LandingPage />
-              </Route>
-            </Switch>
-          </Router>
-        </Paper>
+        <ErrorBoundary>
+          <Paper>
+            <Router>
+              <Switch>
+                <Route path="/newaccount">
+                  <NewAccountPage />
+                </Route>
+                <Route path="/disqualify">
+                  <DisqualificationPage />
+                </Route>
+                <Route path="/">
+                  <LandingPage />
+                </Route>
+              </Switch>
+            </Router>
+          </Paper>
+        </ErrorBoundary>
       </div>
     </div>
   );
