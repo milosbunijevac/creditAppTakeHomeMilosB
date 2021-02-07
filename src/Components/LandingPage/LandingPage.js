@@ -19,9 +19,12 @@ const LandingPage = () => {
     e.preventDefault();
   };
 
-  const handleChange = (e, type) => {
-    dispatch({ type, payload: e.target.value });
-  };
+  const handleChange = useCallback(
+    (e, type) => {
+      dispatch({ type, payload: e.target.value });
+    },
+    [dispatch]
+  );
 
   const { carPrice, carMake, carModel, userIncome, userScore } = useSelector(
     (state) => state
