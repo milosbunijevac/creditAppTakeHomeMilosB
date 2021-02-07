@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
@@ -18,10 +18,6 @@ const LandingPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const { carPrice, carMake, carModel, userIncome, userScore } = useSelector(
-    (state) => state
-  );
-
   const {
     changeCarPrice,
     changeCarMake,
@@ -29,7 +25,19 @@ const LandingPage = () => {
     changeUserIncome,
     changeUserScore,
     changeErrorMessage,
+    resetState,
   } = actionTypes;
+
+  useEffect(() => {
+    return () => {
+      console.log("unmounting");
+      dispatch({ type: resetState });
+    };
+  }, [dispatch, resetState]);
+
+  const { carPrice, carMake, carModel, userIncome, userScore } = useSelector(
+    (state) => state
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();

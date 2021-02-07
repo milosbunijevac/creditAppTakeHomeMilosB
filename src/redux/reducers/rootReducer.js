@@ -59,6 +59,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         errorMessage: action.payload,
       };
+    case actions.resetState:
+      return initialState;
     default:
       return state;
   }

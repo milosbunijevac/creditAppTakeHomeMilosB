@@ -1,9 +1,10 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import TextFieldStyled from "../TextFieldStyled/TextFieldStyled.js";
 import * as actionTypes from "../../redux/actions/rootActions.js";
+import { checkEmptyField } from "../../validators/validators.js";
 
 const NewAccount = () => {
   const dispatch = useDispatch();
@@ -13,11 +14,48 @@ const NewAccount = () => {
     changeUserPasswordConfirm,
   } = actionTypes;
 
+  const [allErrors, setAllErrors] = useState({
+    userEmailError: false,
+    userPasswordError: false,
+    userPasswordConfirmError: false,
+  });
+
   const handleChange = useCallback(
     (e, type) => {
       dispatch({ type, payload: e.target.value });
+      switch (type) {
+        case changeUserEmail: {
+          setAllErrors({
+            ...allErrors,
+            userEmailError: !checkEmptyField(e.target.value),
+          });
+          break;
+        }
+        case changeUserPassword: {
+          setAllErrors({
+            ...allErrors,
+            userPasswordError: !checkEmptyField(e.target.value),
+          });
+          break;
+        }
+        case changeUserPasswordConfirm: {
+          setAllErrors({
+            ...allErrors,
+            userPasswordConfirmError: !checkEmptyField(e.target.value),
+          });
+          break;
+        }
+        default:
+          return null;
+      }
     },
-    [dispatch]
+    [
+      dispatch,
+      allErrors,
+      changeUserEmail,
+      changeUserPassword,
+      changeUserPasswordConfirm,
+    ]
   );
 
   const handleSubmit = (e) => {
@@ -41,18 +79,30 @@ const NewAccount = () => {
                 info={"Enter username (email):"}
                 value={userEmail}
                 type="email"
+                required
+                error={allErrors.userEmailError}
+                label="Email address"
+                helperText="Please enter your email"
                 passbackFunction={(e) => handleChange(e, changeUserEmail)}
               />
               <TextFieldStyled
                 info={"Enter Password:"}
                 value={userPassword}
                 type="password"
+                required
+                label="Password"
+                error={allErrors.userPasswordError}
+                helperText="Passwords must match"
                 passbackFunction={(e) => handleChange(e, changeUserPassword)}
               />
               <TextFieldStyled
                 info={"Confirm Password:"}
                 value={userPasswordConfirm}
                 type="password"
+                required
+                error={allErrors.userPasswordConfirmError}
+                label="Confirm Password"
+                helperText="Passwords must match"
                 passbackFunction={(e) =>
                   handleChange(e, changeUserPasswordConfirm)
                 }

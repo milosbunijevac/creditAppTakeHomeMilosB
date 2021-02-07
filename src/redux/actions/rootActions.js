@@ -7,6 +7,7 @@ export const changeUserEmail = "CHANGE_USER_EMAIL";
 export const changeUserPassword = "CHANGE_USER_PASSWORD";
 export const changeUserPasswordConfirm = "CHANGE_USER_PASSWORD_CONFIRM";
 export const changeErrorMessage = "CHANGE_ERROR_MESSAGE";
+export const resetState = "RESET_STATE";
 
 export const changeCarPriceAction = (carPrice) => ({
   type: changeCarPrice,
@@ -51,4 +52,8 @@ export const changeUserPasswordConfirmAction = (userPasswordConfirm) => ({
 export const changeErrorMessageAction = (errorMessage) => ({
   type: changeErrorMessage,
   payload: errorMessage,
+});
+
+export const resetStateAction = () => ({
+  type: resetState,
 });
