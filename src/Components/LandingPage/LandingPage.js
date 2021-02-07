@@ -10,10 +10,16 @@ import {
   checkMinIncome,
   checkAllErrors,
 } from "../../validators/validators.js";
+import mockFetch from "../../fetchCall/fetchCall";
 import "./LandingPage.css";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
+
+  const { carPrice, carMake, carModel, userIncome, userScore } = useSelector(
+    (state) => state
+  );
+
   const {
     changeCarPrice,
     changeCarMake,
@@ -26,6 +32,13 @@ const LandingPage = () => {
     e.preventDefault();
     if (!checkAllErrors(allErrors)) {
       // Call the API
+      mockFetch(carPrice, userIncome, userScore)
+        .then((response) => {
+          console.log("this is successful response: ", response);
+        })
+        .catch((error) => {
+          console.log("This is the error: ", error);
+        });
       console.log("no errors");
     }
   };
@@ -90,10 +103,6 @@ const LandingPage = () => {
       changeUserScore,
       allErrors,
     ]
-  );
-
-  const { carPrice, carMake, carModel, userIncome, userScore } = useSelector(
-    (state) => state
   );
 
   return (
