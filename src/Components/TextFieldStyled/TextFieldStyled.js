@@ -17,6 +17,7 @@ const TextFieldStyled = (props) => {
     error,
     helperText,
     required,
+    fullWidth,
   } = props;
 
   const adornmentCheck = () => {
@@ -28,7 +29,7 @@ const TextFieldStyled = (props) => {
   };
 
   return (
-    <Grid container spacing={4}>
+    <>
       <Grid item xs={2} />
       <Grid item xs={4}>
         <div className="labelFormatting">{info}</div>
@@ -39,6 +40,7 @@ const TextFieldStyled = (props) => {
           onChange={passbackFunction}
           value={value}
           type={type}
+          fullWidth={fullWidth}
           required={required}
           label={label}
           error={error}
@@ -52,9 +54,8 @@ const TextFieldStyled = (props) => {
           }}
         />
       </Grid>
-      <Grid item xs={4} />
       <Grid item xs={2} />
-    </Grid>
+    </>
   );
 };
 
@@ -64,6 +65,7 @@ TextFieldStyled.propTypes = {
   passbackFunction: propTypes.func.isRequired,
   type: propTypes.string.isRequired,
   error: propTypes.bool,
+  fullWidth: propTypes.bool,
   adornment: propTypes.string,
   label: propTypes.string,
   helperText: propTypes.string,
@@ -76,6 +78,7 @@ TextFieldStyled.defaultProps = {
   error: false,
   helperText: " ",
   required: false,
+  fullWidth: true,
 };
 
 export default TextFieldStyled;

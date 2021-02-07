@@ -90,7 +90,9 @@ const NewAccount = () => {
                 required
                 error={allErrors.userEmailError}
                 label="Email address"
-                helperText="Please enter your email"
+                helperText={
+                  allErrors.userEmailError && "Please enter your email"
+                }
                 passbackFunction={(e) => handleChange(e, changeUserEmail)}
               />
               <TextFieldStyled
@@ -100,7 +102,9 @@ const NewAccount = () => {
                 required
                 label="Password"
                 error={allErrors.userPasswordError}
-                helperText="Passwords must match"
+                helperText={
+                  allErrors.userPasswordError && "Passwords must match"
+                }
                 passbackFunction={(e) => handleChange(e, changeUserPassword)}
               />
               <TextFieldStyled
@@ -110,7 +114,9 @@ const NewAccount = () => {
                 required
                 error={allErrors.userPasswordConfirmError}
                 label="Confirm Password"
-                helperText="Passwords must match"
+                helperText={
+                  allErrors.userPasswordConfirmError && "Passwords must match"
+                }
                 passbackFunction={(e) =>
                   handleChange(e, changeUserPasswordConfirm)
                 }
