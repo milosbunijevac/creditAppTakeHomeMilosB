@@ -125,70 +125,86 @@ const LandingPage = () => {
           <form onSubmit={handleSubmit}>
             <Grid container id="internalLandingPageForm" spacing={4}>
               {/* Text Fields */}
-              <TextFieldStyled
-                info={"Enter Car Price ($):"}
-                value={carPrice}
-                adornment={"$"}
-                type="number"
-                label="required"
-                required
-                error={allErrors.carValueError}
-                helperText={
-                  allErrors.carValueError &&
-                  "Please enter a value below 1,000,000 dollars"
-                }
-                passbackFunction={(e) => handleChange(e, changeCarPrice)}
-              />
-              <TextFieldStyled
-                info={"Enter Car Make:"}
-                value={carMake}
-                type="string"
-                label="required"
-                required
-                error={allErrors.carMakeError}
-                helperText={allErrors.carMakeError && "Please enter a car make"}
-                passbackFunction={(e) => handleChange(e, changeCarMake)}
-              />
-              <TextFieldStyled
-                info={"Enter Car Model:"}
-                value={carModel}
-                type="string"
-                label="required"
-                required
-                error={allErrors.carModelError}
-                helperText={
-                  allErrors.carModelError && "Please enter a car model"
-                }
-                passbackFunction={(e) => handleChange(e, changeCarModel)}
-              />
-              <TextFieldStyled
-                info={"User Income ($):"}
-                value={userIncome}
-                adornment={"$"}
-                type="number"
-                label="required"
-                required
-                error={allErrors.userIncomeError}
-                helperText={
-                  allErrors.userIncomeError && "Please enter a value above 0"
-                }
-                passbackFunction={(e) => handleChange(e, changeUserIncome)}
-              />
-              <TextFieldStyled
-                info={"Enter your credit score:"}
-                value={userScore}
-                type="number"
-                label="required"
-                required
-                error={allErrors.userCreditScoreError}
-                helperText={
-                  allErrors.userCreditScoreError &&
-                  "Please enter a score between 300-850"
-                }
-                passbackFunction={(e) => handleChange(e, changeUserScore)}
-              />
-
+              <Grid item xs={6}>
+                <TextFieldStyled
+                  info={"Enter Car Price ($):"}
+                  value={carPrice}
+                  adornment={"$"}
+                  type="number"
+                  label="required"
+                  required
+                  error={allErrors.carValueError}
+                  helperText={
+                    allErrors.carValueError &&
+                    "Please enter a value below 1,000,000 dollars"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeCarPrice)}
+                />
+                <TextFieldStyled
+                  info={"Enter Car Make:"}
+                  value={carMake}
+                  type="string"
+                  label="required"
+                  required
+                  error={allErrors.carMakeError}
+                  helperText={
+                    allErrors.carMakeError && "Please enter a car make"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeCarMake)}
+                />
+                <TextFieldStyled
+                  info={"Enter Car Model:"}
+                  value={carModel}
+                  type="string"
+                  label="required"
+                  required
+                  error={allErrors.carModelError}
+                  helperText={
+                    allErrors.carModelError && "Please enter a car model"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeCarModel)}
+                />
+                <TextFieldStyled
+                  info={"User Income ($):"}
+                  value={userIncome}
+                  adornment={"$"}
+                  type="number"
+                  label="required"
+                  required
+                  error={allErrors.userIncomeError}
+                  helperText={
+                    allErrors.userIncomeError && "Please enter a value above 0"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeUserIncome)}
+                />
+                <TextFieldStyled
+                  info={"Enter your credit score:"}
+                  value={userScore}
+                  type="number"
+                  label="required"
+                  required
+                  error={allErrors.userCreditScoreError}
+                  helperText={
+                    allErrors.userCreditScoreError &&
+                    "Please enter a score between 300-850"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeUserScore)}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <span>Marketing materials:</span>
+                <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Grid>
               {/* Submit Button */}
+            </Grid>
+            <Grid container id="internalLandingPageFormButton" spacing={4}>
               <Grid item xs={4} />
               <Grid item xs={3}>
                 <Button

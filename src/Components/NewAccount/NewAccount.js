@@ -83,44 +83,46 @@ const NewAccount = () => {
           <form onSubmit={handleSubmit}>
             <Grid container id="internalNewAccountForm" spacing={4}>
               {/* Text Fields */}
-              <TextFieldStyled
-                info={"Enter username (email):"}
-                value={userEmail}
-                type="email"
-                required
-                error={allErrors.userEmailError}
-                label="Email address"
-                helperText={
-                  allErrors.userEmailError && "Please enter your email"
-                }
-                passbackFunction={(e) => handleChange(e, changeUserEmail)}
-              />
-              <TextFieldStyled
-                info={"Enter Password:"}
-                value={userPassword}
-                type="password"
-                required
-                label="Password"
-                error={allErrors.userPasswordError}
-                helperText={
-                  allErrors.userPasswordError && "Passwords must match"
-                }
-                passbackFunction={(e) => handleChange(e, changeUserPassword)}
-              />
-              <TextFieldStyled
-                info={"Confirm Password:"}
-                value={userPasswordConfirm}
-                type="password"
-                required
-                error={allErrors.userPasswordConfirmError}
-                label="Confirm Password"
-                helperText={
-                  allErrors.userPasswordConfirmError && "Passwords must match"
-                }
-                passbackFunction={(e) =>
-                  handleChange(e, changeUserPasswordConfirm)
-                }
-              />
+              <Grid item xs={12}>
+                <TextFieldStyled
+                  info={"Enter username (email):"}
+                  value={userEmail}
+                  type="email"
+                  required
+                  error={allErrors.userEmailError}
+                  label="Email address"
+                  helperText={
+                    allErrors.userEmailError && "Please enter your email"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeUserEmail)}
+                />
+                <TextFieldStyled
+                  info={"Enter Password:"}
+                  value={userPassword}
+                  type="password"
+                  required
+                  label="Password"
+                  error={allErrors.userPasswordError}
+                  helperText={
+                    allErrors.userPasswordError && "Passwords must match"
+                  }
+                  passbackFunction={(e) => handleChange(e, changeUserPassword)}
+                />
+                <TextFieldStyled
+                  info={"Confirm Password:"}
+                  value={userPasswordConfirm}
+                  type="password"
+                  required
+                  error={allErrors.userPasswordConfirmError}
+                  label="Confirm Password"
+                  helperText={
+                    allErrors.userPasswordConfirmError && "Passwords must match"
+                  }
+                  passbackFunction={(e) =>
+                    handleChange(e, changeUserPasswordConfirm)
+                  }
+                />
+              </Grid>
               {/* Submit Button */}
               <Grid item xs={4} />
               <Grid item xs={3}>
