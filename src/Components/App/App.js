@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Banner from "../Banner/Banner.js";
-import Footer from "../Footer/Footer.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import NewAccountPage from "../NewAccount/NewAccount.js";
 import DisqualificationPage from "../DisqualificationPage/DisqualificationPage.js";
@@ -25,7 +24,6 @@ function App() {
           </Switch>
         </Router>
       </div>
-      <Footer />
     </div>
   );
 }
