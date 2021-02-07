@@ -16,11 +16,14 @@ const LandingPage = () => {
         <Grid item xs={8}>
           <form onSubmit={handleSubmit}>
             <Grid container id="internalForm" spacing={4}>
+              {/* Text Fields */}
               <TextFieldStyled info={"Enter Car Price ($):"} />
               <TextFieldStyled info={"Enter Car Make:"} />
               <TextFieldStyled info={"Enter Car Model:"} />
               <TextFieldStyled info={"User Income ($):"} />
               <TextFieldStyled info={"Enter your credit score:"} />
+
+              {/* Submit Button */}
               <Grid item xs={5} />
               <Grid item xs={2}>
                 <Button
