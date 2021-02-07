@@ -9,6 +9,7 @@ const initialState = {
   userEmail: "",
   userPassword: "",
   userPasswordConfirm: "",
+  errorMessage: "Loading error message...",
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -52,6 +53,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         userPasswordConfirm: action.payload,
+      };
+    case actions.changeErrorMessage:
+      return {
+        ...state,
+        errorMessage: action.payload,
       };
     default:
       return state;

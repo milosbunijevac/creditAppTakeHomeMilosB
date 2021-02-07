@@ -6,6 +6,7 @@ export const changeUserScore = "CHANGE_USER_SCORE";
 export const changeUserEmail = "CHANGE_USER_EMAIL";
 export const changeUserPassword = "CHANGE_USER_PASSWORD";
 export const changeUserPasswordConfirm = "CHANGE_USER_PASSWORD_CONFIRM";
+export const changeErrorMessage = "CHANGE_ERROR_MESSAGE";
 
 export const changeCarPriceAction = (carPrice) => ({
   type: changeCarPrice,
@@ -45,4 +46,9 @@ export const changeUserPasswordAction = (userPassword) => ({
 export const changeUserPasswordConfirmAction = (userPasswordConfirm) => ({
   type: changeUserPasswordConfirm,
   payload: userPasswordConfirm,
+});
+
+export const changeErrorMessageAction = (errorMessage) => ({
+  type: changeErrorMessage,
+  payload: errorMessage,
 });
