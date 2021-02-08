@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+#mainSection {
+  height: 50%;
+}

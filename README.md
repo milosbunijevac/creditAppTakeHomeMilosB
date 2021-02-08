@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Take home loan app
+
+When building this application, I used node version 14.15.4 and npm version 6.14.10.
+I believe most versions of npm would work but in case it doesn't, upgrade to these.
+
+I've included DESIGN.md and ERRORHANDLE.md files to describe my thoughts on both the design and error handling situations of this application. Feel free to look those over at your convenience. The instructions below come from Create React App and instruct you how to start the application.
+
+If you want to simply see how the app runs, follow these instructions (inside of the root directory):
+
+1. npm install
+2. npm start
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
