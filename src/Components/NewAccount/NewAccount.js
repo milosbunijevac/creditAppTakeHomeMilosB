@@ -89,7 +89,7 @@ const NewAccount = () => {
                   value={userEmail}
                   type="email"
                   required
-                  data-testid="newAccountEmailAddress"
+                  id="newAccountEmailAddress"
                   error={allErrors.userEmailError}
                   label="Email address"
                   helperText={
@@ -103,7 +103,7 @@ const NewAccount = () => {
                   type="password"
                   required
                   label="Password"
-                  data-testid="newAccountPassword"
+                  id="newAccountPassword"
                   error={allErrors.userPasswordError}
                   helperText={
                     allErrors.userPasswordError && "Passwords must match"
@@ -117,7 +117,7 @@ const NewAccount = () => {
                   required
                   error={allErrors.userPasswordConfirmError}
                   label="Confirm Password"
-                  data-testid="newAccountPasswordConfirm"
+                  id="newAccountPasswordConfirm"
                   helperText={
                     allErrors.userPasswordConfirmError && "Passwords must match"
                   }
@@ -133,8 +133,9 @@ const NewAccount = () => {
                   variant="contained"
                   color="primary"
                   type="submit"
+                  title="createNewAccountButton"
                   fullWidth
-                  data-testid="createNewAccountButton"
+                  id="createNewAccountButton"
                   onSubmit={handleSubmit}
                 >
                   Create New Account
