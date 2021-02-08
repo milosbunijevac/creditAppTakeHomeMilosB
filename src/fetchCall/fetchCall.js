@@ -8,7 +8,6 @@ const mockFetch = (carPrice, userIncome, userScore) => {
       return resolve("Success");
     } else {
       if (carPrice > 1000000) {
-        console.log("bad request, car price:", carPrice);
         const errorRequest = "Bad Request";
         return reject(errorRequest);
       }

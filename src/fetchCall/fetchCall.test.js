@@ -2,14 +2,14 @@ import mockFetch from "./fetchCall.js";
 
 describe("Mock fetch call", () => {
   describe("Positive tests", () => {
-    xit("should return a successful message when user has adequate scores", async () => {
+    it("should return a successful message when user has adequate scores", async () => {
       const testValue = await mockFetch(20000, 110000, 640);
       expect(testValue).toBe("Success");
     });
   });
 
   describe("Negative tests", () => {
-    xit("should return a failure message when user has deficient scores", async () => {
+    it("should return a failure message when user has deficient scores", async () => {
       expect.assertions(1);
       const testValue = mockFetch(20000, 50000, 550).catch((e) => {
         expect(e).toEqual(
@@ -18,7 +18,7 @@ describe("Mock fetch call", () => {
       });
     });
 
-    xit("should return a bad request when user has car value over 1 million", async () => {
+    it("should return a bad request when user has car value over 1 million", async () => {
       expect.assertions(1);
       const testValue = mockFetch(10000000, 50000, 650).catch((e) => {
         expect(e).toEqual("Bad Request");
