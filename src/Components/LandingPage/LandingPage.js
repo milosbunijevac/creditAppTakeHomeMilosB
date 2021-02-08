@@ -215,6 +215,7 @@ const LandingPage = () => {
                   color="primary"
                   type="submit"
                   id="applyNowButton"
+                  title="applyNowButton"
                   onSubmit={handleSubmit}
                 >
                   Apply Now

@@ -1,12 +1,7 @@
 const mockFetch = (carPrice, userIncome, userScore) => {
   const oneFifthQual = (1 / 5) * userIncome;
   const creditScoreQual = userScore > 600;
-  console.log(
-    "oneFifthQual: ",
-    oneFifthQual,
-    " creditScoreQual: ",
-    creditScoreQual
-  );
+
   return new Promise((resolve, reject) => {
     if (oneFifthQual >= carPrice && creditScoreQual) {
       return resolve("Success");

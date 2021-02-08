@@ -1,12 +1,15 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import { createBrowserHistory } from "history";
 import Banner from "../Banner/Banner.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import NewAccountPage from "../NewAccount/NewAccount.js";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary.js";
 import DisqualificationPage from "../DisqualificationPage/DisqualificationPage.js";
 import "./App.css";
+
+export const history = createBrowserHistory();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +33,7 @@ function App() {
       <div id="mainSection" className={classes.root}>
         <ErrorBoundary>
           <Paper>
-            <Router>
+            <Router history={history}>
               <Switch>
                 <Route path="/newaccount">
                   <NewAccountPage />
