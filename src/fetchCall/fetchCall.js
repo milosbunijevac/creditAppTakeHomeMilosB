@@ -1,13 +1,14 @@
 const mockFetch = (carPrice, userIncome, userScore) => {
   const oneFifthQual = (1 / 5) * userIncome;
   const creditScoreQual = userScore > 600;
-  const oneMillCheck = carPrice < 10000000;
+  const oneMillCheck = carPrice <= 1000000;
 
   return new Promise((resolve, reject) => {
     if (oneFifthQual >= carPrice && creditScoreQual && oneMillCheck) {
       return resolve("Success");
     } else {
       if (carPrice > 1000000) {
+        console.log("bad request, car price:", carPrice);
         const errorRequest = "Bad Request";
         return reject(errorRequest);
       }
