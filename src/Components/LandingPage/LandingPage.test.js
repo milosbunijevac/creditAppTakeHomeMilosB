@@ -6,7 +6,6 @@ import { history } from "../App/App.js";
 import store from "../../redux/store.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import NewAccountPage from "../NewAccount/NewAccount.js";
-import DisqualificationPage from "../DisqualificationPage/DisqualificationPage.js";
 
 const wrapWithRedux = (component) => {
   return <Provider store={store}>{component}</Provider>;
@@ -14,8 +13,6 @@ const wrapWithRedux = (component) => {
 
 describe("Landing Page tests", () => {
   it("renders correctly", () => {
-    const { queryAllByTestId } = render(wrapWithRedux(<LandingPage />));
-
     const element = screen.getByTestId("carPriceField");
     expect(element).toBeTruthy();
   });
