@@ -1,5 +1,5 @@
 {
-  "name": "cunatakehomemilosbunijevac",
+  "name": "creditAppTakeHomeMilosB",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "node_modules/.bin/eslint --fix --ext js src"
+    "lint": "node_modules/.bin/eslint --ext js src"
   },
   "eslintConfig": {
     "extends": [

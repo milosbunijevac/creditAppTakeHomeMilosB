@@ -53,6 +53,9 @@ const TextFieldStyled = (props) => {
               </InputAdornment>
             ),
           }}
+          inputProps={{
+            "data-testid": id,
+          }}
         />
       </Grid>
     </Grid>
