@@ -13,6 +13,7 @@ const wrapWithRedux = (component) => {
 
 describe("Landing Page tests", () => {
   it("renders correctly", () => {
+    render(wrapWithRedux(<LandingPage />));
     const element = screen.getByTestId("carPriceField");
     expect(element).toBeTruthy();
   });
