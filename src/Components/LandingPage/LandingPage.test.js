@@ -1,11 +1,21 @@
 import React from "react";
-import { render, fireEvent, screen } from "@testing-library/react";
+import {
+  render,
+  fireEvent,
+  screen,
+  cleanup,
+  waitFor,
+} from "@testing-library/react";
 import { Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { history } from "../App/App.js";
+import { createMemoryHistory } from "history";
 import store from "../../redux/store.js";
 import LandingPage from "../LandingPage/LandingPage.js";
 import NewAccountPage from "../NewAccount/NewAccount.js";
+
+afterEach(() => {
+  cleanup();
+});
 
 const wrapWithRedux = (component) => {
   return <Provider store={store}>{component}</Provider>;
@@ -27,14 +37,9 @@ describe("Landing Page tests", () => {
     expect(element.value).toBe("20000");
   });
 
-  it("simulates a successful submission form process", () => {
-    const mockHistoryPush = jest.fn();
-    jest.mock("react-router-dom", () => ({
-      ...jest.requireActual("react-router-dom"),
-      useHistory: () => ({
-        push: mockHistoryPush,
-      }),
-    }));
+  it("simulates a successful submission form process", async () => {
+    const history = createMemoryHistory();
+    const pushSpy = await jest.spyOn(history, "push");
 
     render(
       wrapWithRedux(
@@ -67,11 +72,9 @@ describe("Landing Page tests", () => {
     fireEvent.change(creditScoreField, { target: { value: "650" } });
 
     const applyNowButton = screen.getByTitle("applyNowButton");
+
     fireEvent.click(applyNowButton);
 
-    /* This would test for a successful submission by checking the final path 
-    which should be /newaccount. I cant get this to work at the moment. */
-
-    expect(mockHistoryPush).toHaveBeenCalled();
+    await waitFor(() => expect(pushSpy).toHaveBeenCalledWith("/newaccount"));
   });
 });
